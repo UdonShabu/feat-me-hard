@@ -7,15 +7,15 @@ export const sideMenuGroups = [
   {
     label: "Unit 1",
     subMenus: [
-      { label: "Sub 1_1", href: `${BASE_PATH}/form` },
-      { label: "Sub 1_2", href: `${BASE_PATH}/todo` },
+      { label: "Form", href: `${BASE_PATH}/form` },
+      { label: "Todo", href: `${BASE_PATH}/todo` },
     ],
   },
   {
     label: "Unit 2",
     subMenus: [
-      { label: "Sub 2_1", href: `${BASE_PATH}/form` },
-      { label: "Sub 2_2", href: `${BASE_PATH}/todo` },
+      { label: "Sub 2_1", href: `${BASE_PATH}/as` },
+      { label: "Sub 2_2", href: `${BASE_PATH}/ass` },
     ],
   },
 ];
