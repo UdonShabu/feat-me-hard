@@ -92,7 +92,7 @@ function MenuItem({
       key={menu.label}
       className={cn(
         "rounded-r-xl p-2",
-        isActive && "bg-teal-100 text-teal-700 font-black",
+        isActive && "bg-teal-100 text-primary font-black",
         !isActive && "hover:bg-slate-100"
       )}
     >
