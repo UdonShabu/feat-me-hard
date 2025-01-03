@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { formSchema } from "@/schemas/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Eye, EyeOff } from "lucide-react";
@@ -31,7 +32,7 @@ export default function FormEx1() {
         <label htmlFor="email" className="block text-sm font-medium">
           Email
         </label>
-        <input
+        <Input
           type="email"
           id="email"
           {...register("email")}
@@ -54,7 +55,7 @@ export default function FormEx1() {
             type={showPassword ? "text" : "password"}
             id="password"
             {...register("password")}
-            className={`mt-1 block w-72 h-8 rounded-md border ${
+            className={`mt-1 block w-72 h-8 px-2 rounded-md border ${
               errors.password ? "border-red-500" : "border-gray-300"
             }`}
           />
