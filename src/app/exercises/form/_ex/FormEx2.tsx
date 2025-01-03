@@ -20,8 +20,9 @@ export default function FormEx2() {
     if (selectedPassions.includes(nextPassion)) {
       newPassions = selectedPassions.filter((p) => p !== nextPassion);
     } else {
-      // 🎯 Target: Handle multiple selections with active color
-      // 🧀 Here
+      newPassions = disabledPassions
+        ? [...selectedPassions]
+        : [...selectedPassions, nextPassion];
     }
     setSelectedPassions(newPassions);
   };
@@ -31,16 +32,16 @@ export default function FormEx2() {
       <h1 className="text-3xl font-bold mb-4">My Passions</h1>
       <p className="mb-6 ">Select passions that you'd like to share.</p>
 
-      {/* 🧀 Here */}
-      <ul className="flex  mb-6 justify-center">
+      <ul className="flex w-[300px] gap-3 flex-wrap mb-6 justify-center">
         {passions.map((passion) => (
           <li key={passion}>
             <Button
               variant="outline"
               className={cn(
-                "border-2 px-2 rounded-full w-fit h-8"
-                // 🧀 Here
-                // : "border-slate-400 text-slate-400 hover:text-slate-400"
+                "border-2 px-2 rounded-full w-fit h-8",
+                selectedPassions.includes(passion)
+                  ? "border-secondary text-secondary hover:text-primary"
+                  : "border-slate-400 text-slate-400 hover:text-slate-400"
               )}
               onClick={() => handleClick(passion)}
             >
