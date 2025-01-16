@@ -11,7 +11,7 @@ export default function FormPage() {
 
 export function ExerciseTabs() {
   return (
-    <Tabs defaultValue={formExercises[0].label} className="w-full ">
+    <Tabs defaultValue={formExercises[2].label} className="w-full ">
       <TabsList className="mb-6">
         {formExercises.map(({ label }) => (
           <TabsTrigger key={label} value={label} className="capitalize px-4">
