@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
 
-export default function FormEx2() {
+export default function FormEx2({ handleNext }: { handleNext?: () => void }) {
   const [selectedPassions, setSelectedPassions] = useState<string[]>([]);
 
   const passions = ["Cow", "Milk", "Whey", "Cheese", "Yogurt", "Whipped Cream"];
@@ -51,7 +51,11 @@ export default function FormEx2() {
         ))}
       </ul>
 
-      <Button disabled={disabledBtn} className="self-center rounded-full w-40 ">
+      <Button
+        disabled={disabledBtn}
+        onClick={() => handleNext && handleNext()}
+        className="self-center rounded-full w-40 "
+      >
         <p className="font-bold text-lg">Done</p>{" "}
         <span className="text-xs">
           {`${selectedPassions.length}/${MAX_PASSIONS}`}
